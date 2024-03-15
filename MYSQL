@@ -1,0 +1,21 @@
+Features of MYSQL
+Scalability - provide required amount of storage space 
+Security -protect our database
+High Performance - it is very fast and accurate
+
+Commands in MYSQL
+Data Definition Language - commands like defining, altering, dropping the structure of databases and tables
+Data Manipulation Language - used for inserting, updating, retriving, deleting data from database
+Data Control Language - commands for managing user privileges and permissions within the database (grant and revoke)
+
+Data Types in MYSQL
+Numeric Types - integer, float, double and decimal
+String Types - characters, strings, texts, binary data
+Date and time types - date and time
+
+Advantages of MYSQL
+Reliability - stability and constitent performance
+Cost Effective - as it is a open source, cost efficient for business
+Community Support - lareg community for assisstance and resources
+
+
