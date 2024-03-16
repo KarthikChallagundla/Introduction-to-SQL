@@ -30,7 +30,3 @@ As I am new to MYSQL programming I have learnt some topics of MYSQL given below.
 ## Contributors:
 
 - Karthik
-
-If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
-
-Happy learning! 🚀
