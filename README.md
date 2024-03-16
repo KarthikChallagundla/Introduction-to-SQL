@@ -1,6 +1,7 @@
 # MySQL Programming Topics
 
 As I am new to MYSQL programming I have learnt some topics of MYSQL given below.
+In this repository, there is a python file in that I have connected the python to MYSQL and performed some MYSQL commands in that file.
 
 ## Topics Covered:
 
