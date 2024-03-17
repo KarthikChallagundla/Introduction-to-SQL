@@ -202,3 +202,13 @@ for x in cursor.fetchall():
 cursor.execute("SELECT officeCode, COUNT(employeeNumber) FROM employees GROUP BY officeCode")
 for x in cursor.fetchall():
   print(x)
+  
+print("LIKE AND NOT LIKE COMMAND")
+cursor.execute("SELECT customerName FROM customers WHERE customerName LIKE 'a%'") # Select queries where customerName starts with a
+for x in cursor.fetchall():
+  print(x)
+
+cursor.execute("SELECT customerName FROM customers WHERE customerName NOT LIKE 'a%'") # Select queries where customerName not starts with a
+for x in cursor.fetchall():
+  print(x)
+  
