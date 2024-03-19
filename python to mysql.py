@@ -212,3 +212,62 @@ cursor.execute("SELECT customerName FROM customers WHERE customerName NOT LIKE '
 for x in cursor.fetchall():
   print(x)
   
+print("DESCRIBE COMMAND")
+cursor.execute("DESCRIBE payments") # Describes the table
+for x in cursor.fetchall():
+  print(x)
+
+cursor.execute("SELECT COUNT(*) FROM products") # Print total number of rows
+for x in cursor.fetchall():
+  print(x)
+
+print("UNION COMMAND")
+cursor.execute("SELECT customerNumber FROM orders UNION SELECT customerNumber FROM payments ORDER BY customerNumber DESC")
+for x in cursor.fetchall():
+  print(x)
+
+print("JOINS")
+print("INNER JOIN")
+cursor.execute("SELECT orders.orderNumber, customers.customerName FROM orders INNER JOIN customers ON orders.customerNumber = customers.customerNumber")
+for x in cursor.fetchall():
+  print(x)
+
+print("LEFT JOIN")
+cursor.execute("SELECT orders.orderNumber, customers.customerName FROM customers LEFT JOIN orders ON customers.customerNumber = orders.customerNumber")
+for x in cursor.fetchall():
+  print(x)
+
+print("RIGHT JOIN")
+cursor.execute("SELECT orders.orderNumber, customers.customerName FROM customers RIGHT JOIN orders ON customers.customerNumber = orders.customerNumber")
+for x in cursor.fetchall():
+  print(x)
+
+print("FULL OUTER JOIN")
+cursor.execute("SELECT orders.orderNumber, customers.customerName FROM customers LEFT JOIN orders ON customers.customerNumber = orders.customerNumber UNION SELECT orders.orderNumber, customers.customerName FROM customers RIGHT JOIN orders ON customers.customerNumber = orders.customerNumber")
+for x in cursor.fetchall():
+  print(x)
+  
+print("INDEX COMMAND")
+cursor.execute("CREATE INDEX idx ON customers (customerName)")
+  
+cursor.execute("SHOW INDEX FROM customers")
+for x in cursor.fetchall():
+  print(x)
+  
+cursor.execute("DROP INDEX idx ON customers")
+  
+print("VIEWS COMMAND")
+cursor.execute("CREATE VIEW customer_view AS SELECT customerNumber, customerName FROM customers")
+
+cursor.execute("SHOW FULL TABLES IN classicmodels WHERE TABLE_TYPE LIKE 'VIEW'")
+for x in cursor.fetchall():
+  print(x)
+  
+cursor.execute("SELECT * FROM customer_view")
+for x in cursor.fetchall():
+  print(x)
+
+cursor.execute("DROP VIEW customer_view")
+
+cursor.close() # Closes the cursor
+mydb.close() # Closes the database
